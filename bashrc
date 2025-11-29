@@ -59,6 +59,7 @@ alias pdf="chromium"
 alias gitstatus="git status"
 alias gitpush="git push"
 alias gitadd="git add"
+alias sys="sudo systemctl"
 
 if [[ $- != *i* ]]; then
     return
