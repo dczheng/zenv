@@ -56,6 +56,9 @@ alias gitrc="git add -u && git commit --amend"
 alias zenv=". ${HOME}/.bashrc"
 alias im="nomacs"
 alias pdf="chromium"
+alias gitstatus="git status"
+alias gitpush="git push"
+alias gitadd="git add"
 
 if [[ $- != *i* ]]; then
     return
