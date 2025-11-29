@@ -20,6 +20,12 @@ pkg_env() {
     if [ -d "$1/share/man" ]; then
         export MANPATH="$1/share/man:$MANPATH"
     fi
+
+    if [ -n "$PYTHONVERSION" ]; then
+        if [ -d "$1/lib/python$PYTHONVERSION/dist-packages" ]; then
+            export PYTHONPATH="$1/share/man:$PYTHONPATH"
+        fi
+    fi
 }
 
 export ZENV=$(dirname "${BASH_SOURCE[0]}")
