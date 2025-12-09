@@ -70,7 +70,6 @@ alias gitstatus="git status"
 alias gitpush="git push"
 alias gitadd="git add"
 alias gitdiff="git diff"
-alias sys="sudo systemctl"
 
 ipbin() {
     CONV=({0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1})
