@@ -66,12 +66,27 @@ alias im="nomacs"
 alias pdf="chromium"
 
 ipbin() {
+    if [ -z $1 ]; then
+        return
+    fi
     CONV=({0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1})
     ip=""
-    for byte in `echo ${1} | tr "." " "`; do
+    for byte in $(echo ${1} | tr "." " "); do
         ip="${ip}.${CONV[${byte}]}"
     done
     echo ${ip:1}
+}
+
+ipinfo() {
+    if [ -z $1 ]; then
+        return
+    fi
+    if [ -z $(which jq) ]; then
+        curl -s ipinfo.io/$1
+        echo""
+    else
+        curl -s ipinfo.io/$1 | jq
+    fi
 }
 
 if [[ $- != *i* ]]; then
