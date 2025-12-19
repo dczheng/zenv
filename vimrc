@@ -32,7 +32,7 @@ setlocal foldmethod=indent
 syntax on
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType html inoremap <div> <div><CR></div><ESC>O
+autocmd FileType html inoremap <div><CR> <div><CR></div><ESC>O
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType make set noexpandtab
 autocmd FileType yaml set tabstop=2 shiftwidth=2
@@ -42,7 +42,7 @@ autocmd BufReadPost * {
     endif
 }
 
-inoremap { {<CR>}<ESC>O
+inoremap {<CR> {<CR>}<ESC>O
 inoremap /* /**/<ESC>hi
 
 highlight CursorLine ctermfg=NONE ctermbg=NONE cterm=underline
