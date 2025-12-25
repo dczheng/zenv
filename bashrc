@@ -63,7 +63,7 @@ alias scp="scp -r"
 alias gitrc="git add -u && git commit --amend"
 alias zenv=". ${HOME}/.bashrc"
 alias im="nomacs"
-alias pdf="chromium"
+alias pdf="zathura"
 
 ipbin() {
     if [ -z $1 ]; then
