@@ -64,6 +64,7 @@ alias gitrc="git add -u && git commit --amend"
 alias zenv=". ${HOME}/.bashrc"
 alias im="nomacs"
 alias pdf="zathura"
+alias dpkg-size="dpkg-query -Wf '\${Installed-Size}\t\${Package}\n' | sort -n"
 
 ipbin() {
     if [ -z $1 ]; then
