@@ -1,29 +1,35 @@
 pkg_env() {
-    if [ -d "$1/bin" ]; then
-        export PATH="$1/bin:$PATH"
+    d="$1/bin"
+    if [ -d "$d" ]; then
+        export PATH="$d:$PATH"
     fi
 
-    if [ -d "$1/include" ]; then
-        export C_INCLUDE_PATH="$1/include:$C_INCLUDE_PATH"
-        export CPLUS_INCLUDE_PATH="$1/include:$CPLUS_INCLUDE_PATH"
+    d="$1/include"
+    if [ -d "$d" ]; then
+        export C_INCLUDE_PATH="$d:$C_INCLUDE_PATH"
+        export CPLUS_INCLUDE_PATH="$d:$CPLUS_INCLUDE_PATH"
     fi
 
-    if [ -d "$1/lib" ]; then
-        export LIBRARY_PATH="$1/lib:$LIBRARY_PATH"
-        export LD_LIBRARY_PATH="$1/lib:$LD_LIBRARY_PATH"
+    d="$1/lib"
+    if [ -d "$d" ]; then
+        export LIBRARY_PATH="$d:$LIBRARY_PATH"
+        export LD_LIBRARY_PATH="$d:$LD_LIBRARY_PATH"
     fi
 
-    if [ -d "$1/lib/pkgconfig" ]; then
-        export PKG_CONFIG_PATH="$1/lib/pkgconfig:$PKG_CONFIG_PATH"
+    d="$1/lib/pkgconfig"
+    if [ -d "$d" ]; then
+        export PKG_CONFIG_PATH="$d:$PKG_CONFIG_PATH"
     fi
 
-    if [ -d "$1/share/man" ]; then
-        export MANPATH="$1/share/man:$MANPATH"
+    d="$1/share/man"
+    if [ -d "$d" ]; then
+        export MANPATH="$d:$MANPATH"
     fi
 
     if [ -n "$PYTHONVERSION" ]; then
-        if [ -d "$1/lib/python$PYTHONVERSION/dist-packages" ]; then
-            export PYTHONPATH="$1/share/man:$PYTHONPATH"
+        d="$1/lib/python$PYTHONVERSION/site-packages"
+        if [ -d "$d" ]; then
+            export PYTHONPATH="$d:$PYTHONPATH"
         fi
     fi
 }
