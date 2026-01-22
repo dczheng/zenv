@@ -69,7 +69,7 @@ alias scp="scp -r"
 alias gitrc="git add -u && git commit --amend"
 alias zenv=". ${HOME}/.bashrc"
 alias im="nomacs"
-alias pdf="zathura"
+alias pdf="chromium"
 alias dpkg-size="dpkg-query -Wf '\${Installed-Size}\t\${Package}\n' | sort -n"
 
 ipbin() {
@@ -90,7 +90,7 @@ ipinfo() {
     fi
     if [ -z $(which jq) ]; then
         curl -s ipinfo.io/$1
-        echo""
+        echo ""
     else
         curl -s ipinfo.io/$1 | jq
     fi
