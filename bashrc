@@ -31,6 +31,10 @@ pkg_env() {
         if [ -d "$d" ]; then
             export PYTHONPATH="$d:$PYTHONPATH"
         fi
+        d="$1/lib/python$PYTHONVERSION/dist-packages"
+        if [ -d "$d" ]; then
+            export PYTHONPATH="$d:$PYTHONPATH"
+        fi
     fi
 }
 
