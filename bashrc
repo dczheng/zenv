@@ -38,6 +38,8 @@ pkg_env() {
     fi
 }
 
+ulimit -c unlimited
+
 export ZENV=$(dirname "${BASH_SOURCE[0]}")
 export PATH="$ZENV/tools:$PATH"
 export LANG=en_US.UTF-8
