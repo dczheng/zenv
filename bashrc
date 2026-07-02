@@ -51,6 +51,8 @@ export HISTIGNORE="cd:l:ls:ll:la:laa"
 export CCACHE_DIR="$HOME/.cache/ccache"
 export CCACHE_SIZE=4294967296
 export LESSHISTFILE="-"
+export OMP_NUM_THREADS=1
+export OMP_THREAD_LIMIT=1
 
 alias ..="cd ../"
 alias ...="cd ../../"
